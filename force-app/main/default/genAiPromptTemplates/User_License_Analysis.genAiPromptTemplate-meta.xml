@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>User_License_Analysis</developerName>
+    <masterLabel>User License Analysis</masterLabel>
+    <templateVersions>
+        <content>You Salesforce admin, You are tasked with analyzing salesforce licenses. Here are license detail -  
+
+{!$Flow:Get_UserLicense_Records.Prompt}
+
+Look at above data and help us figure out licenses which need to be replenished. If we have only 10% license remaining, its considered for replenishing. 
+</content>
+        <inputs>
+            <apiName>License_Type</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>License Type</masterLabel>
+            <referenceName>Input:License_Type</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>flow://Get_UserLicense_Records</definition>
+            <referenceName>Flow:Get_UserLicense_Records</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
