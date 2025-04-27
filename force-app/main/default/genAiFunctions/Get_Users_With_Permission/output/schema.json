@@ -1,0 +1,15 @@
+{
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Prompt" : {
+      "title" : "Prompt",
+      "description" : "Parse the returned output and list the names of the users only in the output, nothing else. Output should not contain JSON",
+      "lightning:type" : "lightning__richTextType",
+      "lightning:isPII" : false,
+      "copilotAction:isDisplayable" : true,
+      "copilotAction:isUsedByPlanner" : true,
+      "copilotAction:useHydratedPrompt" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

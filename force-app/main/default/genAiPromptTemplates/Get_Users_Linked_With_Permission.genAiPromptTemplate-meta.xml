@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Get_Users_Linked_With_Permission</developerName>
+    <masterLabel>Get Users Linked With Permission</masterLabel>
+    <templateVersions>
+        <content>sdf
+</content>
+        <inputs>
+            <apiName>permissionName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Permission Name</masterLabel>
+            <referenceName>Input:permissionName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Draft</status>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

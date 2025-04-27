@@ -1,0 +1,14 @@
+{
+  "required" : [ "permissionName" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "permissionName" : {
+      "title" : "Permission Name",
+      "description" : "Permission api name retrieved from previous action. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

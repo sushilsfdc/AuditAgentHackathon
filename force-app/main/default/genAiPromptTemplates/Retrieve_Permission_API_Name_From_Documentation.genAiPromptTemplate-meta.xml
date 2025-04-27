@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</activeVersionIdentifier>
+    <developerName>Retrieve_Permission_API_Name_From_Documentation</developerName>
+    <masterLabel>Retrieve Permission API Name From Documentation</masterLabel>
+    <templateVersions>
+        <content>Purpose of this prompt template is to retrieve permission api name from below data source. Based on user provided {!$Input:Permission_Name}, Identify correct API name of the permission from below documentation. 
+
+{!$EinsteinSearch:File_Agent_for_Setup_Library_17456634584_1Cx_ohabe73a21d.results}
+
+Output should contain api name of the permission you found, no other text. Now generate the response. 
+</content>
+        <inputs>
+            <apiName>Permission_Name</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Permission Name</masterLabel>
+            <referenceName>Input:Permission_Name</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>invocable://getEinsteinRetrieverResults/File_Agent_for_Setup_Library_17456634584_1Cx_ohabe73a21d</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>searchText</parameterName>
+                <valueExpression>{!$Input:Permission_Name}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://List&lt;String&gt;</definition>
+                <isRequired>false</isRequired>
+                <parameterName>outputFieldNames</parameterName>
+                <valueExpression>[&quot;Chunk&quot;]</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://Integer</definition>
+                <isRequired>false</isRequired>
+                <parameterName>resultCount</parameterName>
+                <valueExpression>1</valueExpression>
+            </parameters>
+            <referenceName>EinsteinSearch:File_Agent_for_Setup_Library_17456634584_1Cx_ohabe73a21d</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

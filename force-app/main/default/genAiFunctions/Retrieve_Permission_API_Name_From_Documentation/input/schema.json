@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:Permission_Name" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Permission_Name" : {
+      "title" : "Permission Name",
+      "description" : "Name/Description of the permission. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

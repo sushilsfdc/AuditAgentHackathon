@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action takes Permission name/description as input and returns permission api name.</description>
+    <invocationTarget>Retrieve_Permission_API_Name_From_Documentation</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Retrieve Permission API Name From Documentation</masterLabel>
+    <progressIndicatorMessage>Retriev</progressIndicatorMessage>
+</GenAiFunction>

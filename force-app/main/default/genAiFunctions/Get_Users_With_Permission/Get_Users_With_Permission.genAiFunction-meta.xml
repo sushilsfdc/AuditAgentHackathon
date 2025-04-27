@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Retrieve a list of users who have a specific permission. Before running this action, Run Agent Action - &quot;Retrieve Permission API Name From Documentation&quot; to get the api name of the permission. Use retrieved permission api name to run this action.</description>
+    <invocationTarget>UserPermissionRetrieval</invocationTarget>
+    <invocationTargetType>apex</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Get Users With Permission</masterLabel>
+</GenAiFunction>
