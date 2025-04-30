@@ -38,13 +38,13 @@
                 <functionName>AdminCopilot__GetAndExplainUserPermissions</functionName>
             </genAiFunctions>
             <genAiFunctions>
-                <functionName>AdminCopilot__AnswerQuestionsWithSalesforceDocumentation</functionName>
-            </genAiFunctions>
-            <genAiFunctions>
                 <functionName>Retrieve_Permission_API_Name_From_Documentation</functionName>
             </genAiFunctions>
             <genAiFunctions>
                 <functionName>Get_Users_With_Permission</functionName>
+            </genAiFunctions>
+            <genAiFunctions>
+                <functionName>Object_Field_Permission_Analysis</functionName>
             </genAiFunctions>
             <genAiPluginInstructions>
                 <description>If a user is referenced in the utterance, and the user&apos;s ID isn&apos;t specified in the customer input, use the IdentifyRecordByName action to identify the user and get the user&apos;s ID. If the input includes pronouns like &apos;I,&apos; &apos;my,&apos; or &apos;me,&apos; ask for clarification. If multiple record IDs are returned, ask the user to select the correct one.</description>
@@ -107,6 +107,12 @@
             <scope>Your job is to answer questions only about Salesforce permissions. Specifically, you can explain a user&apos;s assigned object permissions and user permissions, or the user permissions required to perform a given task or use a specific feature.</scope>
         </genAiCustomizedPlugin>
         <genAiPluginName>AdminCopilot__UserAccessManagement</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>Salesforce_License_Management</genAiPluginName>
+    </genAiPlugins>
+    <genAiPlugins>
+        <genAiPluginName>Salesforce_Setup_Audit_Trail</genAiPluginName>
     </genAiPlugins>
     <masterLabel>Agent for Setup</masterLabel>
     <plannerType>AiCopilot__ReAct</plannerType>

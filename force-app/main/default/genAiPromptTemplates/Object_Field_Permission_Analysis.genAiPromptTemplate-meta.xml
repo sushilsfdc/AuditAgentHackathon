@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</activeVersionIdentifier>
+    <description>Help determine object/field level access</description>
+    <developerName>Object_Field_Permission_Analysis</developerName>
+    <masterLabel>Object Field Permission Analysis</masterLabel>
+    <templateVersions>
+        <content>You are salesforce system admin and you are tasked with determine certain object and field level access. Based on supplied inputs, Below action will retrieve permissions.  
+
+{!$Apex:OrgPermissions.Prompt}
+
+Check above org permissions and provide formatted output to the end user. Parse the response, If profile name is not blank, return profile name, other return permission set name. 
+</content>
+        <inputs>
+            <apiName>entityType</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>entityType</masterLabel>
+            <referenceName>Input:entityType</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>objectApiName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>objectApiName</masterLabel>
+            <referenceName>Input:objectApiName</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>fieldApiName</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>fieldApiName</masterLabel>
+            <referenceName>Input:fieldApiName</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://OrgPermissions</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>entityType</parameterName>
+                <valueExpression>{!$Input:entityType}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>fieldApiName</parameterName>
+                <valueExpression>{!$Input:fieldApiName}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>objectApiName</parameterName>
+                <valueExpression>{!$Input:objectApiName}</valueExpression>
+            </parameters>
+            <referenceName>Apex:OrgPermissions</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

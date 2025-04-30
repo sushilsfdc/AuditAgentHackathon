@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_2</activeVersionIdentifier>
+    <developerName>Setup_Audit_Trail_Summary</developerName>
+    <masterLabel>Setup Audit Trail Summary</masterLabel>
+    <templateVersions>
+        <content>You are system admin of the org and need to analyze setup audit trail to find out what particular user did in org on particular day
+
+{!$Apex:SummarizeAuditTrail.Prompt}
+
+Look at setup audit trail data for user and summarize everything for a user did on particular day. if there is no data provided above, Just answer that no data available for this user. Do not provide any other information
+</content>
+        <inputs>
+            <apiName>Activity_Date</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Activity Date</masterLabel>
+            <referenceName>Input:Activity_Date</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>User_Id</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Id</masterLabel>
+            <referenceName>Input:User_Id</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://SummarizeAuditTrail</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Activity_Date</parameterName>
+                <valueExpression>{!$Input:Activity_Date}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>User_Id</parameterName>
+                <valueExpression>{!$Input:User_Id}</valueExpression>
+            </parameters>
+            <referenceName>Apex:SummarizeAuditTrail</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You are system admin of the org and need to analyze setup audit trail to find out what particular user did in org on particular day
+
+{!$Apex:SummarizeAuditTrail.Prompt}
+
+Look at setup audit trail data for user and summarize everything for a user did on particular day. If certain things are repeated, you can list them only once with some summary.  
+</content>
+        <inputs>
+            <apiName>Activity_Date</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>Activity Date</masterLabel>
+            <referenceName>Input:Activity_Date</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>User_Id</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>User Id</masterLabel>
+            <referenceName>Input:User_Id</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://SummarizeAuditTrail</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Activity_Date</parameterName>
+                <valueExpression>{!$Input:Activity_Date}</valueExpression>
+            </parameters>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>User_Id</parameterName>
+                <valueExpression>{!$Input:User_Id}</valueExpression>
+            </parameters>
+            <referenceName>Apex:SummarizeAuditTrail</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_2</versionIdentifier>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

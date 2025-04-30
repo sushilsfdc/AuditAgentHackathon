@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_2</activeVersionIdentifier>
     <developerName>User_License_Analysis</developerName>
     <masterLabel>User License Analysis</masterLabel>
     <templateVersions>
         <content>You Salesforce admin, You are tasked with analyzing salesforce licenses. Here are license detail -  
 
-{!$Flow:Get_UserLicense_Records.Prompt}
+{!$Apex:OrgLicenseInformation.Prompt}
 
-Look at above data and help us figure out licenses which need to be replenished. If we have only 10% license remaining, its considered for replenishing. 
+Look at above data and help us figure out licenses which need to be replenished. If we have only 10% license remaining, its considered for replenishing. Return only records which do need replenishing.
 </content>
         <inputs>
             <apiName>License_Type</apiName>
@@ -17,12 +18,46 @@ Look at above data and help us figure out licenses which need to be replenished.
             <required>true</required>
         </inputs>
         <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
-        <status>Draft</status>
+        <status>Published</status>
         <templateDataProviders>
-            <definition>flow://Get_UserLicense_Records</definition>
-            <referenceName>Flow:Get_UserLicense_Records</referenceName>
+            <definition>apex://OrgLicenseInformation</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>License_Type</parameterName>
+                <valueExpression>{!$Input:License_Type}</valueExpression>
+            </parameters>
+            <referenceName>Apex:OrgLicenseInformation</referenceName>
         </templateDataProviders>
         <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_1</versionIdentifier>
+    </templateVersions>
+    <templateVersions>
+        <content>You Salesforce admin, You are tasked with analyzing salesforce licenses. Here are license detail -  
+
+{!$Apex:OrgLicenseInformation.Prompt}
+
+Look at above data and help us figure out licenses which need to be replenished. You divide used licenses by Total licenses for determining percentage of licenses left in the org. If only 10% of  licenses remaining, its considered for replenishing. 
+</content>
+        <inputs>
+            <apiName>License_Type</apiName>
+            <definition>primitive://String</definition>
+            <masterLabel>License Type</masterLabel>
+            <referenceName>Input:License_Type</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4OmniMini</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>apex://OrgLicenseInformation</definition>
+            <parameters>
+                <definition>primitive://String</definition>
+                <isRequired>true</isRequired>
+                <parameterName>License_Type</parameterName>
+                <valueExpression>{!$Input:License_Type}</valueExpression>
+            </parameters>
+            <referenceName>Apex:OrgLicenseInformation</referenceName>
+        </templateDataProviders>
+        <versionIdentifier>7YdgQuF/mXHg+DskYWsYOCx+ALT/r5pD56Nv3H2Q/yg=_2</versionIdentifier>
     </templateVersions>
     <type>einstein_gpt__flex</type>
     <visibility>Global</visibility>

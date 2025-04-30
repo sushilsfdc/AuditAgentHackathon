@@ -1,0 +1,21 @@
+{
+  "required" : [ "Input:License_Type" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:License_Type" : {
+      "title" : "License Type",
+      "description" : "The type of license that user want to check. If its about all org licenses, Just Pass All as the value. No need to ask for specific value.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

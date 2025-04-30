@@ -1,0 +1,35 @@
+{
+  "required" : [ "Input:fieldApiName", "Input:objectApiName", "Input:entityType" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:fieldApiName" : {
+      "title" : "fieldApiName",
+      "description" : "Take this from user. Required only when requesting fieldpermissions access. If this value is not available, Pass None as the value. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:objectApiName" : {
+      "title" : "objectApiName",
+      "description" : "Take this from user. Exact object api name required. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:entityType" : {
+      "title" : "entityType",
+      "description" : "Value for this can be either ObjectPermissions or FieldPermissions depending upon which access user is trying to check. ",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

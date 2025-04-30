@@ -1,0 +1,28 @@
+{
+  "required" : [ "Input:Activity_Date", "Input:User_Id" ],
+  "unevaluatedProperties" : false,
+  "properties" : {
+    "Input:Activity_Date" : {
+      "title" : "Activity Date",
+      "description" : "Get this information from conversation history. Pass date only in MM/DD/YYYY",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "Input:User_Id" : {
+      "title" : "User Id",
+      "description" : "Get this information from conversation history. If only user's name is provided, Invoke Get Record by name action to get the user id before invoking the action.",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    },
+    "citationMode" : {
+      "title" : "Citation Mode",
+      "description" : "Select Citation Mode",
+      "lightning:type" : "lightning__textType",
+      "lightning:isPII" : false,
+      "copilotAction:isUserInput" : false
+    }
+  },
+  "lightning:type" : "lightning__objectType"
+}

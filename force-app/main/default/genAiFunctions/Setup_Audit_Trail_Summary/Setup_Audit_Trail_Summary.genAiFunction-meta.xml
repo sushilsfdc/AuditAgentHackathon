@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiFunction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This action helps summarize everything a admin user did in salesforce org on particular org.</description>
+    <invocationTarget>Setup_Audit_Trail_Summary</invocationTarget>
+    <invocationTargetType>generatePromptResponse</invocationTargetType>
+    <isConfirmationRequired>false</isConfirmationRequired>
+    <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+    <masterLabel>Setup Audit Trail Summary</masterLabel>
+</GenAiFunction>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPlugin xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <canEscalate>false</canEscalate>
+    <description>Handles inquiries related to managing Salesforce org licenses, including allocation and renewal processes.</description>
+    <developerName>Salesforce_License_Management</developerName>
+    <genAiFunctions>
+        <functionName>User_License_Analysis</functionName>
+    </genAiFunctions>
+    <genAiPluginInstructions>
+        <description>If a user requests information about license types, provide details on available options.</description>
+        <developerName>instruction_ifauserreq0</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_ifauserreq0</masterLabel>
+    </genAiPluginInstructions>
+    <genAiPluginInstructions>
+        <description>Clarify any questions users have about license limits and usage.</description>
+        <developerName>instruction_clarifyany1</developerName>
+        <language xsi:nil="true"/>
+        <masterLabel>instruction_clarifyany1</masterLabel>
+    </genAiPluginInstructions>
+    <language>en_US</language>
+    <masterLabel>Salesforce License Management</masterLabel>
+    <pluginType>Topic</pluginType>
+    <scope>I can assist with managing Salesforce org licenses, including allocation, renewal, and providing information about license types.</scope>
+</GenAiPlugin>
